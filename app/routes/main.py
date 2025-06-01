@@ -1,67 +1,233 @@
-from flask import Blueprint, jsonify
+from flask import Blueprint, jsonify,Flask,render_template,redirect
+from waitress import serve
 
-main_bp = Blueprint("main", __name__)
+app = Flask("__name__")
 
-@main_bp.route("/")
+@app.route('/')
 def home():
-    return jsonify({"message": "Welcome to TechSite!"})
-
-
-@main_bp.route('/')
-def home():
-    return jsonify({"page": "Home", "message": "LNCT Homepage"})
-
-@main_bp.route('/about')
+#     link image of logo to this url ---- <a href="{{ url_for('home') }}"> in 'index.html'
+      return render_template("index.html")
+  
+@app.route('/about')
 def about():
-    return jsonify({"page": "About LNCT", "content": "LNCT "})
+    return render_template("about.html")
 
-@main_bp.route('/academics')
-def academics():
-    return jsonify({"page": "Academics", "content": "Information."})
 
-@main_bp.route('/news-events')
-def news_events():
-    return jsonify({"page": "News & Events", "content": "Upcoming events and news."})
 
-@main_bp.route('/alumni')
+##inside academics
+@app.route('/academics/department')
+def department():
+    return render_template("department.html")
+@app.route('/academics/campus_life')
+def campus_life():
+    return render_template("campus_life.html")
+@app.route('/academics/admission')
+def admission():
+    return render_template("admission.html")
+@app.route('/academics/Student_techer_login')
+def Student_techer_login():
+    ## only student login is available
+    return redirect('https://portal.lnct.ac.in/Accsoft2/studentlogin.aspx')
+
+
+# @app.route('/news-events')
+# def news_events():
+#     return render_template("news.html")
+
+
+@app.route('/alumni')
 def alumni_page():
-    return jsonify({"page": "Alumni", "content": "LNCT Alumni Success Stories."})
+    return render_template("alumni.html")
+@app.route('/alumni/talk')
+def talk():
+    return render_template("alumni_talk.html")
+@app.route('/alumni/photos')
+def photos():
+    return render_template("alumni_photos.html")
 
-@main_bp.route('/placement')
-def placement():
-    return jsonify({"page": "Placement", "content": "Placement stats and company tie-ups."})
 
-@main_bp.route('/colleges')
-def colleges():
-    return jsonify({"page": "Colleges", "content": "LNCT group colleges list."})
+# @app.route('/placement')
+@app.route('/placement/records')
+def placement_records():
+    # Example: fetch placed students from DB
+    placed_students = [
+        {"name": "Alice", "company": "Google"},
+        {"name": "Bob", "company": "Microsoft"},
+    ]
+    return render_template('placement_records.html', students=placed_students)
 
-@main_bp.route('/contact')
+# 2) Placement Brochure (serve a PDF file)
+@app.route('/placement/brochure')
+def placement_brochure():
+    brochure_path = 'static/files/placement_brochure.pdf'
+    return send_file(brochure_path, as_attachment=True)
+
+# 3) Training Info
+@app.route('/placement/training')
+def placement_training():
+    # Example training info
+    training_data = {
+        "courses": ["Resume Building", "Interview Preparation", "Technical Skills"],
+        "schedule": "Every Monday and Wednesday, 5-7 PM"
+    }
+    return render_template('placement_training.html', training=training_data)
+
+# 4) Company/Recruiters Info
+@app.route('/placement/company')
+def placement_company():
+    companies = ["Google", "Microsoft", "Amazon", "Facebook"]
+    return render_template('placement_company.html', companies=companies)
+
+
+
+# @app.route('/colleges')
+# -------------------- 🔵 College Routes --------------------
+
+@app.route('/colleges/lnctvu')
+def lnctvu():
+    return redirect("https://lnctvu.ac.in")
+
+@app.route('/colleges/jnctpu')
+def jnctpu():
+    return redirect("https://jnctpu.edu.in")
+
+@app.route('/colleges/indorelnmc')
+def indorelnmc():
+    return redirect("https://indorelnmc.in")
+
+@app.route('/colleges/jncn')
+def jncn():
+    return redirect("https://jncn.ac.in")
+
+@app.route('/colleges/cecibalsapur')
+def cecibalsapur():
+    return redirect("https://cecibalsapur.ac.in")
+
+@app.route('/colleges/lncps')
+def lncps():
+    return redirect("https://lncps.in")
+
+@app.route('/colleges/lnctuj')
+def lnctuj():
+    return redirect("https://lnctuj.com")
+
+@app.route('/colleges/lncts')
+def lncts():
+    return redirect("https://lncts.in")
+
+@app.route('/colleges/lnctmca')
+def lnctmca():
+    return redirect("https://lnctmca.in")
+
+@app.route('/colleges/lncpbhopal')
+def lncpbhopal():
+    return redirect("https://lncpbhopal.in")
+
+@app.route('/colleges/lnctbhopal')
+def lnctbhopal():
+    return redirect("https://lnctbhopal.in")
+
+@app.route('/colleges/lncte')
+def lncte():
+    return redirect("https://lncte.in")
+
+@app.route('/colleges/lnctbblindorecampus')
+def lnctbblindorecampus():
+    return redirect("https://lnctbblindorecampus.in")
+
+@app.route('/colleges/lnctrishiraj')
+def lnctrishiraj():
+    return redirect("https://lnctrishiraj.ac.in")
+
+@app.route('/colleges/lnctsopindore')
+def lnctsopindore():
+    return redirect("https://lnctsopindore.in")
+
+@app.route('/colleges/lnctworldschools')
+def lnctworldschools():
+    return redirect("https://lnctworldschools.com")
+
+@app.route('/colleges/lnctguru')
+def lnctguru():
+    return redirect("https://lnctguru.com")
+
+@app.route('/colleges/lnayurvedcollege')
+def lnayurvedcollege():
+    return redirect("https://lnayurvedcollege.com")
+
+# -------------------- 🟠 Company Routes --------------------
+
+@app.route('/Company/jayantjaggery')
+def jayantjaggery():
+    return redirect("https://jayantjaggery.com")
+
+@app.route('/Company/kalchuricontractors')
+def kalchuricontractors():
+    return redirect("https://kalchuricontractors.ltd")
+
+@app.route('/Company/parvatisweetners')
+def parvatisweetners():
+    return redirect("https://parvatisweetners.co.in")
+
+@app.route('/vitamax')
+def vitamax():
+    return redirect("https://vitamax.co.in")
+
+@app.route('/Company/dabracobrew')
+def dabracobrew():
+    return redirect("https://dabracobrew.com")
+
+@app.route('/Company/jpsbilaspur')
+def jpsbilaspur():
+    return redirect("https://jpsbilaspur.com")
+
+@app.route('/Company/ananjay')
+def ananjay():
+    return redirect("https://ananjay.co.in")
+
+@app.route('/Company/ananjaypharma')
+def ananjaypharma():
+    return redirect("https://ananjaypharma.co.in")
+
+@app.route('/Company/clchomeopathy')
+def clchomeopathy():
+    return redirect("https://clchomeopathy.in")
+
+
+
+
+
+
+@app.route('/contact')
 def contact():
     return jsonify({"page": "Contact", "content": "Get in touch with LNCT."})
 
 # --------------------------------
 
-@main_bp.route('/explore-campus')
+@app.route('/explore-campus')
 def explore_campus():
     return redirect("https://lnct.ac.in/explore-campus")
 
-@main_bp.route('/apply-now')
+@app.route('/apply-now')
 def apply_now():
     return redirect("https://lnct.ac.in/apply")
 
 # -------------------------?
-@main_bp.route('/api/admission')
+@app.route('/api/admission')
 def admission():
     return jsonify({"title": "Admission", "info": "Admission process and requirements."})
 
-@main_bp.route('/api/courses')
+@app.route('/api/courses')
 def courses():
     return jsonify({"courses": ["B.Tech", "M.Tech", "MBA", "MCA", "Diploma"]})
 
-@main_bp.route('/api/tour')
+@app.route('/api/tour')
 def campus_tour():
     return jsonify({"title": "Campus Tour", "video_link": "https://youtube.com/lnct-tour"})
 
-@main_bp.route('/api/facilities')
+@app.route('/api/facilities')
 def facilities():
     return jsonify({"facilities": ["Hostel", "Library", "Labs", "Sports", "Cafeteria"]})
+
+if __name__=="__main__":
+    serve(app,host='0.0.0.0', port=2000)
