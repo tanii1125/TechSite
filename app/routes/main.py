@@ -17,19 +17,58 @@ def about():
 
 
 ##inside academics
-@app.route('/academics/department')
-def department():
-    return render_template("department.html")
-@app.route('/academics/campus_life')
-def campus_life():
-    return render_template("campus_life.html")
-@app.route('/academics/admission')
-def admission():
-    return render_template("admission.html")
-@app.route('/academics/Student_techer_login')
-def Student_techer_login():
-    ## only student login is available
+    ##department
+@app.route('/academics/department/CSE/Btech')
+def department_CSE_Btech(): #
+    return render_template("about_cse_Btech.html")
+@app.route('/academics/department/CSE/Mtech')
+def department_CSE_mtech(): #
+    return render_template("about_cse_mtech.html")
+
+@app.route('/academics/department/CSE-AIML')
+def department_CSE_AIML(): 
+    return render_template("about_CSE-AIML.html")
+@app.route('/academics/department/CSE_Cyber')
+def department_CSE_Cyber(): #
+    return render_template("about_cse_cyber.html")
+@app.route('/academics/department/Civil_engg')
+def department_Civil_engg(): #
+    return render_template("about_Civil_engg.html")
+@app.route('/academics/department/ECE')
+def department_ECE(): #
+    return render_template("about_ECE.html")
+
+    ##campus life
+@app.route('/academics/campus_life/Hostel')
+def campus_life_Hostel():
+    return render_template("campus_life_Hostel.html")
+@app.route('/academics/campus_life/library')
+def campus_life_library():
+    return render_template("campus_life_library.html")
+
+
+    ## academics
+@app.route('/academics/admission_process')
+def admission_process():
+    return render_template("admission_process.html")
+@app.route('/academics/admission_inquiry')
+def admission_inquiry():
+    return render_template("admission_inquiry.html")
+@app.route('/academics/admission_Feerefund')
+def admission_Feerefund():
+    return render_template("admission_Feerefund.html")
+@app.route('/academics/admission_feeStructure')
+def admission_feeStructure():
+    return render_template("admission_feeStructure.html")
+
+
+    ##student techer login
+@app.route('/academics/Student_login')
+def Student_login():
     return redirect('https://portal.lnct.ac.in/Accsoft2/studentlogin.aspx')
+@app.route('/academics/Employ_login')
+def Employ_login():
+    return redirect('https://portal.lnct.ac.in/Accsoft2/login.aspx')
 
 
 # @app.route('/news-events')
