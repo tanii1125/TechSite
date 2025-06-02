@@ -1,7 +1,9 @@
-from flask import Blueprint, jsonify,Flask,render_template,redirect
+from flask import jsonify,Flask,render_template,redirect,request
 from waitress import serve
+from db import login,signin
 
 app = Flask("__name__")
+
 
 @app.route('/')
 def home():
@@ -208,10 +210,41 @@ def contact():
 def explore_campus():
     return redirect("https://lnct.ac.in/explore-campus")
 
-@app.route('/apply-now')
-def apply_now():
-    return redirect("https://lnct.ac.in/apply")
+# @app.route('/apply-now')
+# def apply_now():
+@app.route('/signin',methods=["POST","GET"])
+def Signin():
+    if request.method=="POST":
+        
+        user_name=request.form.get('name')
+        user_password=request.form.get('password')
+        data=signin(user_name,user_password)
+        
+        if data==False:
+            return render_template('signin.html',error="error while signing in")
+        else:
+            return redirect('/')
+    
+    else:
+        return render_template('signin.html')
+    
 
+@app.route('/login',methods=["POST","GET"])
+def Login():
+    if request.method=="POST":
+        user_name=request.form.get('name')
+        user_password=request.form.get('password')
+        data=login(user_name, user_password)
+        
+        if data==False:
+            return render_template('login.html', error="Credintials not match")
+        else:
+            return redirect('/')
+        
+    else:
+        return render_template('login.html')
+    
+    
 # -------------------------?
 @app.route('/api/admission')
 def admission():
