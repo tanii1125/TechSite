@@ -1,0 +1,22 @@
+Name for files:
+home.html ---for {/} 
+about.html ---for {/about}
+
+about_cse_Btech.html ----for {/academics/department/CSE/Btech}
+about_cse_mtech.html----for {/academics/department/CSE/Mtech'}
+about_Btech_CSE-AIML.html----for {'/academics/department/CSE-AIML'}
+about_cse_cyber.html ----for {'/academics/department/CSE_Cyber}
+about_Civil_engg.html----for {/academics/department/Civil_engg}
+about_ECE.html ---for {/academics/department/ECE}
+
+campus_life_Hostel.html ---for{/academics/campus_life/Hostel}
+campus_life_library.html ----for{/academics/campus_life/library}
+admission_process.html-----for{/academics/admission_process'}
+admission_inquiry.html-----for{/academics/admission_inquiry'}
+admission_Feerefund.html-----for{/academics/admission_Feerefund'}
+admission_feeStructure.html-----for{/academics/admission_feeStructure'}
+
+alumni.html ---for{/alumni}
+alumni_talk.html ---for{/alumni/talk}
+alumni_photos.html---for{/alumni/photos}
+

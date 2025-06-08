@@ -8,7 +8,7 @@ app = Flask("__name__")
 @app.route('/')
 def home():
 #     link image of logo to this url ---- <a href="{{ url_for('home') }}"> in 'index.html'
-      return render_template("index.html")
+      return render_template("home.html")
   
 @app.route('/about')
 def about():
@@ -27,7 +27,7 @@ def department_CSE_mtech(): #
 
 @app.route('/academics/department/CSE-AIML')
 def department_CSE_AIML(): 
-    return render_template("about_CSE-AIML.html")
+    return render_template("about__Btech_CSE-AIML.html")
 @app.route('/academics/department/CSE_Cyber')
 def department_CSE_Cyber(): #
     return render_template("about_cse_cyber.html")
@@ -303,3 +303,4 @@ def facilities():
 
 if __name__=="__main__":
     serve(app,host='0.0.0.0', port=2000)
+
