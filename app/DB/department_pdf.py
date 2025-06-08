@@ -1,7 +1,7 @@
 # from flask import Blueprint,Flask,send_file, render_template
-# from bson import ObjectId
-# import io
-# from upload.upload_PPTS import fs # this is your GridFS instance
+from bson import ObjectId
+import io
+from upload.upload_PPTS import fs # this is your GridFS instance
 # from waitress import serve 
 
 # routes_bp = Blueprint("routes", __name__)

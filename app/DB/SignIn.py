@@ -1,6 +1,4 @@
 from pymongo import MongoClient
-from flask import Flask,render_template,request #
-from waitress import serve #
 
 with open("my_credentials", "r") as file:
     username = file.readline().strip()
