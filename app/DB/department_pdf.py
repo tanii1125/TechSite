@@ -1,13 +1,13 @@
-from flask import Blueprint,Flask,send_file, render_template
-from bson import ObjectId
-import io
-from upload.upload_PPTS import fs # this is your GridFS instance
-from waitress import serve 
+# from flask import Blueprint,Flask,send_file, render_template
+# from bson import ObjectId
+# import io
+# from upload.upload_PPTS import fs # this is your GridFS instance
+# from waitress import serve 
 
-routes_bp = Blueprint("routes", __name__)
+# routes_bp = Blueprint("routes", __name__)
+
 
 # List all uploaded PDFs
-
 def list_pdfs():
     files = fs.find()
     return render_template("pdf_list.html", files=files)
@@ -31,10 +31,7 @@ def download_pdf(file_id):
                          download_name=file.filename)
     except:
         return "PDF not found", 404
-app = Flask(__name__)
-app.register_blueprint(routes_bp)
-                
-# if __name__ == "__main__":
-#     serve(app,host='0.0.0.0', port=5000)
-
-# import in main..
+    
+    
+# app = Flask(__name__)
+# app.register_blueprint(routes_bp)
