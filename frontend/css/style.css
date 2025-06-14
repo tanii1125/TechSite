@@ -567,3 +567,533 @@ th {
     font-size: 14px;
   }
 }
+
+/* ===== Alumni Hero Section ===== */
+.alumni-hero {
+  background-image: url('/uploads/images/alumni_banner.jpg'); /* Replace with your hero image path */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-align: center;
+}
+
+.hero-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 2rem;
+  border-radius: 8px;
+}
+
+.alumni-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.alumni-hero .tagline {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* ===== Alumni About Section ===== */
+.alumni-about {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  color: #1f2937;
+}
+
+.alumni-about .container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.alumni-about h2 {
+  font-size: 2rem;
+  color: #054BB4;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+.alumni-about p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+}
+/* ===== Alumni Podcast Section ===== */
+.alumni-podcast {
+  padding: 60px 20px;
+  background-color: #fff;
+  color: #1f2937;
+}
+
+.alumni-podcast h2 {
+  font-size: 2rem;
+  color: #054BB4;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.section-subtitle {
+  text-align: center;
+  font-size: 1rem;
+  color: #5D6169;
+  margin-bottom: 40px;
+}
+
+.podcast-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.video-card {
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background: #f9f9f9;
+}
+
+.video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.video-card img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.video-card p {
+  padding: 10px;
+  font-weight: 600;
+  color: #2E5CAF;
+}
+
+/* ===== Campus Life Hero Section ===== */
+.campus-hero {
+  background-image: url('../../images/campus-hero.jpg'); /* replace with your banner */
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.campus-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.campus-hero h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  font-weight: 400;
+}
+
+/* ===== Campus Intro Section ===== */
+.campus-intro {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.campus-intro h2 {
+  color: #054BB4;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.campus-intro p {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ===== Gallery Section ===== */
+.campus-gallery {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.campus-gallery h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #054BB4;
+  margin-bottom: 10px;
+}
+
+.section-subtitle {
+  text-align: center;
+  color: #5D6169;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+/* ===== Clubs & Societies Section ===== */
+.campus-clubs {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.campus-clubs h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #054BB4;
+  margin-bottom: 10px;
+}
+
+.campus-clubs .section-subtitle {
+  text-align: center;
+  color: #5D6169;
+  margin-bottom: 40px;
+}
+
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+}
+
+.club-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.club-card:hover {
+  transform: translateY(-6px);
+}
+
+.club-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.club-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.club-info h4 {
+  font-size: 1.2rem;
+  color: #2E5CAF;
+  margin-bottom: 5px;
+}
+
+.club-type {
+  font-size: 0.9rem;
+  color: #999;
+  margin-bottom: 8px;
+}
+
+.club-info p {
+  font-size: 0.95rem;
+  color: #444;
+}
+/* ===== Learning Spaces Section ===== */
+.campus-learning {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.campus-learning h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #054BB4;
+  margin-bottom: 10px;
+}
+
+.campus-learning .section-subtitle {
+  text-align: center;
+  color: #5D6169;
+  margin-bottom: 40px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.gallery-grid img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gallery-grid img:hover {
+  transform: scale(1.03);
+}
+
+.campus-facilities {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+}
+
+.campus-facilities h2 {
+  text-align: center;
+  font-size: 2rem;
+  color: #054BB4;
+  margin-bottom: 10px;
+}
+
+.campus-facilities .section-subtitle {
+  text-align: center;
+  color: #5D6169;
+  margin-bottom: 40px;
+}
+
+/* ===== News Hero Section ===== */
+.news-hero {
+  background-image: url('../../images/banners/news-events.jpg'); /* Replace with banner */
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.news-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  color: white;
+  padding: 2rem;
+  border-radius: 10px;
+}
+
+.news-overlay h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+}
+
+/* ===== Notice Board ===== */
+.news-board {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+}
+
+.news-board h2 {
+  color: #054BB4;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.notice-list {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #333;
+}
+
+.notice-list li::before {
+  content: "📢 ";
+}
+
+/* ===== Events Section ===== */
+.news-events {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.news-events h2 {
+  color: #054BB4;
+  font-size: 2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.event-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.event-card {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.event-card:hover {
+  transform: translateY(-6px);
+}
+
+.event-card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.event-card h4 {
+  color: #2E5CAF;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+
+/* ===== Contact Hero ===== */
+.contact-hero {
+  background-image: url('../../images/banners/contact-banner.jpg'); /* Replace with banner image */
+  background-size: cover;
+  background-position: center;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.contact-overlay {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 2rem;
+  color: white;
+  border-radius: 8px;
+}
+
+.contact-hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.tagline {
+  font-size: 1.1rem;
+}
+
+/* ===== Contact Info ===== */
+.contact-info {
+  padding: 60px 20px;
+  background-color: #fff;
+}
+
+.contact-info .info-box {
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.contact-info h2 {
+  color: #054BB4;
+  margin-top: 1.5rem;
+}
+
+/* ===== Contact Form ===== */
+.contact-form-section {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.contact-form-section h2 {
+  font-size: 2rem;
+  color: #054BB4;
+  margin-bottom: 30px;
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+.contact-form button {
+  padding: 12px;
+  background-color: #054BB4;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+  background-color: #2E5CAF;
+}
+
+/* ===== Map Section ===== */
+.map-section {
+  margin-top: -20px;
+}
