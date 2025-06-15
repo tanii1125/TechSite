@@ -1,13 +1,13 @@
 from flask_cors import CORS
 from flask import Flask,render_template,redirect,request,send_file
 from waitress import serve
-from app.DB.SignIn import signin
-from app.DB.logIn import login
+from DB.SignIn import signin
+from DB.logIn import login
 from bson import ObjectId
-from app.DB.upload.upload_PPTS import fs,db # this is your GridFS instance
+from DB.upload.upload_PPTS import fs,db # this is your GridFS instance
 import io
 
-app=Flask(__name__,template_folder='app/templates',static_folder='app/static')
+app=Flask(__name__,template_folder='templates',static_folder='static')
 CORS(app)
 
 @app.route('/')
