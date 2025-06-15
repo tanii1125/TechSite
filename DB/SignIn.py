@@ -1,6 +1,6 @@
 from pymongo import MongoClient
 
-with open("/home/tanisha/Downloads/TechSite (1)/DB/my_credentials", "r") as file:
+with open("/home/tanisha/Downloads/TechSite (2)/DB/my_credentials", "r") as file:
     username = file.readline().strip()
     password=file.readline().strip()
 
