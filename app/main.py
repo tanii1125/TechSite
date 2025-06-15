@@ -5,9 +5,15 @@ from DB.logIn import login
 from bson import ObjectId
 from DB.upload.upload_PPTS import fs,db # this is your GridFS instance
 import io
+from flask_cors import CORS
+
+app=Flask(__name__)
 
 
-app=Flask("__main__")
+
+@app.route('/')
+def index():
+    return render_template("index.html")
 
 
 @app.route('/signin',methods=["POST","GET"]) # to update
@@ -48,7 +54,7 @@ def Login():
     else:
         return render_template('login.html')
 
-@app.route('/list')
+@app.route('https://lncts.onrender.com/list')
 def list_pdfs():
     files = fs.find()
     return render_template("list.html", files=files)
