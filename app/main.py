@@ -1,35 +1,35 @@
-from flask import Flask,render_template,redirect,request,send_file
-from waitress import serve
-from app.DB.SignIn import signin
-from app.DB.logIn import login
-from bson import ObjectId
-from app.DB.upload.upload_PPTS import fs,db # this is your GridFS instance
-import io
+# from flask import Flask,render_template,redirect,request,send_file
+# from waitress import serve
+# from app.DB.SignIn import signin
+# from app.DB.logIn import login
+# from bson import ObjectId
+# from app.DB.upload.upload_PPTS import fs,db # this is your GridFS instance
+# import io
 
 
 app=Flask(__name__)
 
 
-@app.route('/signin',methods=["POST","GET"]) # to update
-def Signin():
-    if request.method=="POST":
+# @app.route('/signin',methods=["POST","GET"]) # to update
+# def Signin():
+#     if request.method=="POST":
         
-        user_name=request.form.get('name')
-        user_password=request.form.get('password')
-        email=request.form.get('email')
+#         user_name=request.form.get('name')
+#         user_password=request.form.get('password')
+#         email=request.form.get('email')
     
-        try:
-            signin(user_name,user_password,email)
-        except Exception as e:
-            return render_template('signin.html',error=f"Error while signin: {e}")
+#         try:
+#             signin(user_name,user_password,email)
+#         except Exception as e:
+#             return render_template('signin.html',error=f"Error while signin: {e}")
             
-        else:
-            return redirect('index.html')
+#         else:
+#             return redirect('index.html')
           
-        # http://127.0.0.1:5500/templates/index.html
+#         # http://127.0.0.1:5500/templates/index.html
     
-    else:
-        return render_template('signin.html')
+#     else:
+#         return render_template('signin.html')
     
 
 @app.route('/login',methods=["POST","GET"])
