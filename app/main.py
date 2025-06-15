@@ -7,7 +7,7 @@
 # import io
 
 
-app=Flask(__name__)
+# app=Flask(__name__)
 
 
 # @app.route('/signin',methods=["POST","GET"]) # to update
@@ -32,46 +32,46 @@ app=Flask(__name__)
 #         return render_template('signin.html')
     
 
-@app.route('/login',methods=["POST","GET"])
-def Login():
-    if request.method=="POST":
-        email=request.form.get('email')
-        user_password=request.form.get('password')
+# @app.route('/login',methods=["POST","GET"])
+# def Login():
+#     if request.method=="POST":
+#         email=request.form.get('email')
+#         user_password=request.form.get('password')
         
-        result= login(email, user_password)
-        if result==None:
-            return render_template('login.html', error="Error in login")
+#         result= login(email, user_password)
+#         if result==None:
+#             return render_template('login.html', error="Error in login")
         
-        else:
-            return redirect('index.html')
+#         else:
+#             return redirect('index.html')
         
-    else:
-        return render_template('login.html')
+#     else:
+#         return render_template('login.html')
 
-@app.route('/list')
-def list_pdfs():
-    files = fs.find()
-    return render_template("list.html", files=files)
+# @app.route('/list')
+# def list_pdfs():
+#     files = fs.find()
+#     return render_template("list.html", files=files)
 
-# View PDF in browser
-@app.route("/view/<file_id>")
-def view_pdf(file_id):
-    file = fs.get(ObjectId(file_id))
-    return send_file(io.BytesIO(file.read()),
-                    mimetype="application/pdf",
-                    download_name=file.filename)
+# # View PDF in browser
+# @app.route("/view/<file_id>")
+# def view_pdf(file_id):
+#     file = fs.get(ObjectId(file_id))
+#     return send_file(io.BytesIO(file.read()),
+#                     mimetype="application/pdf",
+#                     download_name=file.filename)
     
-# Download PDF
-@app.route("/download/<file_id>")
-def download_pdf(file_id):
-    try:
-        file = fs.get(ObjectId(file_id))
-        return send_file(io.BytesIO(file.read()),
-                         mimetype="application/pdf",
-                         as_attachment=True,
-                         download_name=file.filename)
-    except:
-        return "PDF not found", 404
+# # Download PDF
+# @app.route("/download/<file_id>")
+# def download_pdf(file_id):
+#     try:
+#         file = fs.get(ObjectId(file_id))
+#         return send_file(io.BytesIO(file.read()),
+#                          mimetype="application/pdf",
+#                          as_attachment=True,
+#                          download_name=file.filename)
+#     except:
+#         return "PDF not found", 404
     
-if __name__=="__main__":
-    serve(app,host='0.0.0.0', port=2000)
+# if __name__=="__main__":
+#     serve(app,host='0.0.0.0', port=2000)
