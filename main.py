@@ -1,9 +1,9 @@
 from flask import Flask,render_template,redirect,request,send_file
 from waitress import serve
-from DB.SignIn import signin
-from DB.logIn import login
+from app.DB.SignIn import signin
+from app.DB.logIn import login
 from bson import ObjectId
-from DB.upload.upload_PPTS import fs,db # this is your GridFS instance
+from app.DB.upload.upload_PPTS import fs,db # this is your GridFS instance
 import io
 from flask_cors import CORS
 
@@ -30,7 +30,7 @@ def Signin():
             return render_template('signin.html',error=f"Error while signin: {e}")
             
         else:
-            return redirect('http://127.0.0.1:5500/templates/index.html')
+            return redirect('/index.html')
           
         # http://127.0.0.1:5500/templates/index.html
     
@@ -49,7 +49,7 @@ def Login():
             return render_template('login.html', error="Error in login")
         
         else:
-            return redirect('http://127.0.0.1:5500/templates/index.html')
+            return redirect('/index.html')
         
     else:
         return render_template('login.html')
