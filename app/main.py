@@ -79,5 +79,7 @@ def download_pdf(file_id):
     except:
         return "PDF not found", 404
     
-if __name__=="__main__":
-    serve(app,host='0.0.0.0', port=2000)
+# if __name__=="__main__":
+#     serve(app,host='0.0.0.0', port=2000)
+
+CORS(app)
