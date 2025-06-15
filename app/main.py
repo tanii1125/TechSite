@@ -24,7 +24,7 @@ def Signin():
             return render_template('signin.html',error=f"Error while signin: {e}")
             
         else:
-            return redirect('/index.html')
+            return redirect('index.html')
           
         # http://127.0.0.1:5500/templates/index.html
     
@@ -43,7 +43,7 @@ def Login():
             return render_template('login.html', error="Error in login")
         
         else:
-            return redirect('/index.html')
+            return redirect('index.html')
         
     else:
         return render_template('login.html')
@@ -51,7 +51,7 @@ def Login():
 @app.route('/list')
 def list_pdfs():
     files = fs.find()
-    return render_template("/list.html", files=files)
+    return render_template("list.html", files=files)
 
 # View PDF in browser
 @app.route("/view/<file_id>")
