@@ -57,7 +57,7 @@ def Login():
 @app.route('https://lncts.onrender.com/list')
 def list_pdfs():
     files = fs.find()
-    return render_template("list.html", files=files)
+    return render_template("app/list.html", files=files)
 
 # View PDF in browser
 @app.route("/view/<file_id>")
