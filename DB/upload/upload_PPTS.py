@@ -6,7 +6,7 @@ import gridfs
 app = Flask(__name__)
 
 # MongoDB connection
-with open("/home/tanisha/Downloads/TechSite (1)/app/DB/my_credentials", "r") as file:
+with open("/home/tanisha/Downloads/TechSite (1)/DB/my_credentials", "r") as file:
     username = file.readline().strip()
     password=file.readline().strip()
 

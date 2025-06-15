@@ -7,7 +7,7 @@ from bson import ObjectId
 from DB.upload.upload_PPTS import fs,db # this is your GridFS instance
 import io
 
-app=Flask(__name__,template_folder='templates',static_folder='static')
+app=Flask(__name__)
 CORS(app)
 
 @app.route('/')
