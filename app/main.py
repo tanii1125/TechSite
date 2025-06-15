@@ -8,6 +8,8 @@ import io
 
 
 app=Flask("__main__")
+
+
 @app.route('/signin',methods=["POST","GET"]) # to update
 def Signin():
     if request.method=="POST":
@@ -45,19 +47,6 @@ def Login():
         
     else:
         return render_template('login.html')
-
-
-# @app.route('/')
-# def drop_down():
-#     cursor = db.fs.find({"metadata.category": "placement"}).sort("metadata.batch", 1)
-#     files = []
-#     for file_doc in cursor:
-#         files.append({
-#             "id": str(file_doc["_id"]),
-#             "batch": file_doc["metadata"].get("batch", "Unknown"),
-#             "filename": file_doc["filename"]
-#         })
-#     return files
 
 @app.route('/list')
 def list_pdfs():
