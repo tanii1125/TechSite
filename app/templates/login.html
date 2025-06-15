@@ -12,6 +12,11 @@
 
     <label for="password">Password:</label><br>
     <input type="password" id="password" name="password" required><br><br>
+    <div id="error-message" style="color: red;">
+      {% if error %}
+      {{ error }}
+      {% endif %}
+    </div>
 
     <button type="submit">Login</button>
   </form>

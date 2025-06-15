@@ -8,19 +8,23 @@ import io
 
 
 app=Flask("__main__")
-
 @app.route('/signin',methods=["POST","GET"]) # to update
 def Signin():
     if request.method=="POST":
         
         user_name=request.form.get('name')
         user_password=request.form.get('password')
-        data=signin(user_name,user_password)
-        
-        if data==False:
-            return render_template('signin.html',error="error while signing in")
+        email=request.form.get('email')
+    
+        try:
+            signin(user_name,user_password,email)
+        except Exception as e:
+            return render_template('signin.html',error=f"Error while signin: {e}")
+            
         else:
-            return redirect('/')
+            return redirect('http://127.0.0.1:5500/templates/index.html')
+          
+        # http://127.0.0.1:5500/templates/index.html
     
     else:
         return render_template('signin.html')
@@ -29,17 +33,19 @@ def Signin():
 @app.route('/login',methods=["POST","GET"])
 def Login():
     if request.method=="POST":
-        user_name=request.form.get('name')
+        email=request.form.get('email')
         user_password=request.form.get('password')
-        data=login(user_name, user_password)
         
-        if data==False:
-            return render_template('login.html', error="Credintials not match")
+        result= login(email, user_password)
+        if result==None:
+            return render_template('login.html', error="Error in login")
+        
         else:
-            return redirect('/')
+            return redirect('http://127.0.0.1:5500/templates/index.html')
         
     else:
         return render_template('login.html')
+
 
 # @app.route('/')
 # def drop_down():
