@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Available PDFs</title>
+</head>
+<body>
+    <h1>PDF List</h1>
+    <ul>
+    {% for file in files %}
+        <li>
+            {{ file.filename }} —
+            <a href="https://techsite-vnu8.onrender.com/view/{{ file._id }}">View</a> |
+            <a href="https://techsite-vnu8.onrender.com/download/{{ file._id }}">Download</a>
+        </li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
