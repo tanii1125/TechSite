@@ -9,6 +9,12 @@
   <title>Login</title>
 </head>
 <body>
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+  
   <h2>Login</h2>
   <form action="/login" method="POST">
     <label for="email">Email:</label><br>
@@ -25,5 +31,7 @@
     <button type="submit">Login</button>
   </form>
   <p>Don't have an account? <a href="/signin">Sign up here</a></p>
+
+  {% endblock %}
 </body>
 </html>

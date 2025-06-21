@@ -1,13 +1,13 @@
 <!-- ===== Navbar Start ===== -->
-<link rel="stylesheet" href="/static/styles/style.css">
+<link rel="stylesheet" href="{{ url_for('static', filename='styles/style.css') }}">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-<script defer src="/static/js/script.js"></script>
+<script defer src="{{ url_for('static', filename='js/script.js') }}"></script>
 
 <header>
         <nav class="navbar fixed-navbar">
         <div class="container nav-container">
             <!-- LNCT logo -->
-            <img src="/static/uploads/images/LNCT-Logo.png" alt="LNCT Logo" class="logo"> 
+            <img src="{{ url_for('static', filename='uploads/images/LNCT-Logo.png') }}" alt="LNCT Logo" class="logo"> 
     
             <ul class="nav-links">
             <li><a href="/">Home</a></li>

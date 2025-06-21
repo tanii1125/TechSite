@@ -8,6 +8,12 @@
     <title>Available PDFs</title>
 </head>
 <body>
+    {% extends "base.html" %}
+
+    {% block title %}About Us{% endblock %}
+    
+    {% block content %}
+      
     <h1>PDF List</h1>
     <ul>
     {% for file in files %}
@@ -18,5 +24,6 @@
         </li>
     {% endfor %}
     </ul>
+    {% endblock %}
 </body>
 </html>

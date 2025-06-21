@@ -15,9 +15,12 @@
 
 <body>
 
-  <!-- ===== Fixed Navbar Start ===== -->
-  <div id="navbar-placeholder"></div>
-  <!-- ===== Fixed Navbar End ===== -->
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+  
 
   <!-- ===== Hero Section ===== -->
   <section class="news-hero">
@@ -65,8 +68,7 @@
     </div>
   </section>
 
-  <!-- Footer Include -->
-  <div id="footer-placeholder"></div>
+ {% endblock %}
 
 </body>
 </html>

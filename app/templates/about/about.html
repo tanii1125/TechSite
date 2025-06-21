@@ -14,13 +14,15 @@
 </head>
 
 <body>
+<!-- templates/about/about.html -->
+{% extends "base.html" %}
 
-  <!-- ===== Fixed Navbar Start ===== -->
-  <div id="navbar-placeholder"></div>
-  <!-- ===== Fixed Navbar End ===== -->
+{% block title %}About Us{% endblock %}
 
-  <!-- ===== About Content Start ===== -->
-  <section class="about-page">
+{% block content %}
+  
+   <!-- ===== About Content Start ===== -->
+   <section class="about-page">
     <div class="container">
       <h2 class="section-title">About Us</h2>
 
@@ -52,9 +54,11 @@
   </section>
   <!-- ===== About Content End ===== -->
 
-  <!-- ===== Footer Start ===== -->
-  <div id="footer-placeholder"></div>
-  <!-- ===== Footer End ===== -->
-
 </body>
 </html>
+
+{% endblock %}
+
+ 
+
+  

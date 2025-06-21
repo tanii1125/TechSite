@@ -5,6 +5,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+{% extends "base.html" %}
+
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+  
   <meta charset="UTF-8">
   <title>Sign Up</title>
 </head>
@@ -29,5 +35,7 @@
     
   </form>
   <p>Already have an account? <a href="/login">Login here</a></p>
+
+  {% endblock %}
 </body>
 </html>

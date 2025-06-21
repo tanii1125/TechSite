@@ -14,10 +14,13 @@
 </head>
 
 <body>
+{% extends "base.html" %}
 
-  <!-- ===== Fixed Navbar Start ===== -->
-  <div id="navbar-placeholder"></div>
-  <!-- ===== Fixed Navbar End ===== -->
+{% block title %}About Us{% endblock %}
+
+{% block content %}
+    
+
 
   <!-- ===== Content Start ===== -->
     <section class="department-section">
@@ -146,9 +149,7 @@
       
   <!-- ===== Content End ===== -->
 
-  <!-- ===== Footer Start ===== -->
-  <div id="footer-placeholder"></div>
-  <!-- ===== Footer End ===== -->
+{% endblock %}
 
 </body>
 </html>
