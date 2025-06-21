@@ -3,6 +3,6 @@ services:
     name: flask-backend
     env: python
     buildCommand: ""
-    startCommand: gunicorn 'app:create_app()'
+    startCommand: gunicorn app.wsgi:create_app()
     region: oregon
     plan: free
