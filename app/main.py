@@ -10,7 +10,7 @@ import gridfs
 
 app=Flask("__main__",template_folder='templates')
 
-with open("my_credentials", "r") as file:
+with open("app/my_credentials", "r") as file:
     username = file.readline().strip()
     password=file.readline().strip()
 client=MongoClient( f"mongodb+srv://{username}:{password}@cluster0.xnjfjzj.mongodb.net/")
