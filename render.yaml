@@ -3,6 +3,6 @@ services:
     name: flask-backend
     env: python
     buildCommand: ""
-    startCommand: python/app/main.py
+    startCommand: python3 app/main.py
     region: oregon
     plan: free
