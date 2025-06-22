@@ -1,14 +1,4 @@
-from pymongo import MongoClient
-
-with open("my_credentials", "r") as file:
-    username = file.readline().strip()
-    password=file.readline().strip()
-client=MongoClient( f"mongodb+srv://{username}:{password}@cluster0.xnjfjzj.mongodb.net/")
-
-db=client["Sign_in"]
-collection=db["users"]
-
-def signin(user_name,user_password,confirm_password,email):
+def signin(db,user_name,user_password,confirm_password,email):
     if user_password != confirm_password:
         raise ValueError("Passwords do not match.")
 

@@ -3,14 +3,30 @@ from waitress import serve
 from DB.SignIn import signin
 from DB.logIn import login
 from bson import ObjectId
-from DB.upload.upload_PPTS import fs,db # this is your GridFS instance
+from pymongo import MongoClient
+from DB.upload.upload_PPTS import upload_pdf # this is your GridFS instance
 import io
-from flask_cors import CORS
-
+import gridfs
 
 app=Flask("__main__",template_folder='templates')
-# CORS(app)
 
+with open("my_credentials", "r") as file:
+    username = file.readline().strip()
+    password=file.readline().strip()
+client=MongoClient( f"mongodb+srv://{username}:{password}@cluster0.xnjfjzj.mongodb.net/")
+
+
+@app.route("/upload", methods=["POST","GET"])
+def upload():
+    db = client["pdf_database"]
+    fs = gridfs.GridFS(db)
+    
+    if request.method=="GET":
+        return render_template("upload/upload.html")
+    file = request.files.get("pdf")
+    upload_pdf(db,fs,file)
+    return render_template("upload/yay.html")
+    
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -68,6 +84,8 @@ def alumni():
 #### signin page  (handle similar signin)
 @app.route('/signin',methods=["POST","GET"]) # to update
 def Signin():
+    db=client["Sign_in"]
+    collection=db["users"]
     if request.method=="POST":
         
         user_name=request.form.get('name')
@@ -75,7 +93,7 @@ def Signin():
         email=request.form.get('email')
         confirm_password=request.form.get('confirm_password')
         try:
-            signin(user_name,user_password,confirm_password,email)
+            signin(db,user_name,user_password,confirm_password,email)
         except ValueError as e:
             return render_template('signin.html',error=f"Error: {e}")
         
@@ -88,11 +106,13 @@ def Signin():
 
 @app.route('/login',methods=["POST","GET"])
 def Login():
+    db=client["Sign_in"]
+    collection=db["users"]
     if request.method=="POST":
         email=request.form.get('email')
         user_password=request.form.get('password')
         
-        result= login(email, user_password)
+        result= login(db,email, user_password)
         if result==None:
             return render_template('login.html', error="Error in login")
         
