@@ -5,7 +5,7 @@ import gridfs
 
 app = Flask(__name__)
 
-with open("/home/tanisha/Downloads/deployment_tech/app/DB/my_credentials", "r") as file:
+with open("my_credentials", "r") as file:
     username = file.readline().strip()
     password=file.readline().strip()
 
